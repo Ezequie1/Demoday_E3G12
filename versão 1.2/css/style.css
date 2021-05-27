@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+
+ul li a:hover{
+    background-color:rgb(0, 71, 71) ;
+    border-radius: 5px;
+    transition: .1s;
+}
+
+.myTitle{
+    font-family: 'Pattaya', sans-serif;
+    font-size: 30pt;
+    color: white;
+}
+.header{
+    background: rgb(25, 142, 124);
+    height: 100px;
+    
+}
+
+.dropdown-item.text-white:hover{
+    color: black !important;
+}
+.dropdown-menu{
+    background: rgb(25, 142, 124)
+}
+
+.main{
+    background-color: rgb(3, 114, 97);
+    height: 300px;
+}
+.footer{
+    background: black;
+    height: 120px;
+}
+.logo-size{
+    height: 135px;
+    width: 400px;
+    margin-left: -20px;
+}
+.bg-official{
+    background-color: rgb(3, 114, 97);
+}
+.current-page{
+    color: black !important;
+}
