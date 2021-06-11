@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.nav-link{
+    color: red;
+}
+
+ul li a:hover {
+    background-color: rgb(0, 71, 71);
+    border-radius: 5px;
+    transition: .1s;
+    color: white !important;
+}
+
+.white-color:hover{
+    color: white !important;
+}
+
+.myTitle {
+    font-family: 'Pattaya', sans-serif;
+    font-size: 30pt;
+    color: white;
+}
+
+.header {
+    background: #EEEAD4;
+    height: 100px;
+}
+
+.dropdown-item.text-white:hover {
+    color: black !important;
+}
+
+.dropdown-menu {
+    background: rgb(25, 142, 124)
+}
+
+.main {
+    background-color: rgb(3, 114, 97);
+    height: 300px;
+}
+
+.footer {
+    
+    height: 120px;
+    color: white;
+}
+
+.footer-contents {
+    list-style: none;
+    color: white !important;
+}
+
+.footer-contents a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo-size {
+    height: 135px;
+    width: 400px;
+    margin-left: -20px;
+}
+
+.bg-official {
+    background: #EEEAD4;
+}
+
+.current-page {
+    color: white !important;
+    background-color: rgb(0, 71, 71);
+    text-decoration: underline;
+    border-radius: 2px;
+}
+
+.formFonts {
+    color: white;
+    font-size: 16pt;
+}
+
+.form-group.row input[type=checkbox] {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+.formbg {
+    background: rgb(0, 71, 71);
+    border-radius: 15px;
+}
+
+.log-btn {
+    background: rgb(25, 142, 124);
+}
+
+.sigmar {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media(max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgb(0, 71, 71);
+    }
+}
+
+.btn-iniciar {
+    color: black;
+    border: none;
+    background-color: rgb(66, 71, 186);
+    padding: 9px;
+    border-radius: 23px;
+    font-size: 22pt;
+    color: #F2DB0B;
+}
+
+.oqe {
+    color: white;
+    width: 100%;
+    list-style: none;
+}
+
+.btn-list {
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 14pt;
+}
+
+
+/* fliip*/
+
+.Card {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-animate {
+    position: relative;
+    height: 348px;
+    width: 250px;
+    margin: 5px;
+    margin-bottom: 10px;
+    perspective: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.card-animate .flip {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card-animate:hover .flip {
+    transform: rotateY(180deg);
+}
+
+.front-card,
+.back-card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back-card {
+    transform: rotateY(180deg);
+    filter: blur(9px);
+}
+
+.descricacao{
+    text-align: justify;
+}
+
+.front-card img,
+.back-card img {
+    border-radius: 3px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3)
+}
+
+.flip-card-center {
+    float: none;
+    margin: auto;
+}
+
+.index-btn-quiz {
+    border: none;
+    padding: 15px;
+    color: yellow;
+    background-color: blue;
+}
+
+.bg-blue:hover{
+    color: #1DA1F2;
+}
+
+.card-animate-img-size{
+    width: 90%;
+}
