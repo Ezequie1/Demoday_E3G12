@@ -1,9 +1,4 @@
-
-<% 
-	String base_url = "http://localhost:8081/politizando-teste/";
-	String base_url_links = "http://localhost:8081/politizando-teste/representantes-politicos/";
-%>
-
+<% String base_url = "http://localhost:8081/politizando-teste/"; %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,17 +20,20 @@
     <meta name="description" content="Aprenda de maneira simples sobre seus representante com o politizando.me">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= titulo %> </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="shortcut icon" href="<%=base_url %>img/logo/incone.png" />
+    <title><%= titulo %> </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
     <link rel="stylesheet" href="<%= base_url %>css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	 
 
 </head>
 
 
-<body class="bg-white">
+<body class="<%= (isCurrentPage.equals("quiz.jsp") ? "bg-quiz" : "bg-white") %>">
     <!--    INICIO DA BARRA DE NAVEGAÇÃO    -->
     <header class="bg-quiz">
 
@@ -44,11 +42,10 @@
                 <div class="container-fluid">
                     <!-- Logo -->
                     <a class="navbar-brand" href="<%= base_url %>index.jsp">
-                         <img src="<%= base_url%>img/logo/logo-teste-2-1.png" heigth="30" width="150"/>
-                        
+                         <img src="<%= base_url %>img/logo/logo-teste-2-1.png" heigth="30" width="150"/>
                     </a>
                     <!-- Fim logo-->
-
+ 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -56,16 +53,13 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-3">
                             <li class="nav-item dropdown">
                                 <a href="<%= base_url %>index.jsp" class="nav-link text-center <%= (isCurrentPage.equals("index.jsp")) ? "current-page" : "" %>">
-	                                <i class="fas fa-home">
-	                                        <span>Inicio</span>
-	                                    </i>
+	                                <span>Inicio </span><i class="fas fa-home"></i>
                                 </a>
                             </li>
+
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-center <%= (isCurrentPage.equals("aprender.jsp")) || (isCurrentPage.equals("mapa.jsp")) || (isCurrentPage.equals("o-que-e-politica.jsp")) ? "current-page" : "" %>" style="text-decoration:none;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-book-reader">
-                                        Aprender 
-                                    </i>
+                                <a class="nav-link dropdown-toggle text-center <%= (isCurrentPage.equals("aprender.jsp")) || (isCurrentPage.equals("mapa.jsp")) || (isCurrentPage.equals("o-que-e-politica.jsp")) || (isCurrentPage.equals("voto.jsp")) ? "current-page" : "" %>" style="text-decoration:none;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span>Aprender </span><i class="fas fa-book-reader"></i>
 
                                 </a>
 
@@ -75,12 +69,7 @@
                                     		Mapa
                                     	</a>
                                     </li>
-
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    	<h4 class="text-center">Política</h4>
-                                    <li>
+									<li>
                                     	<a href="<%= base_url %>o-que-e-politica.jsp" class="dropdown-item text-white">
                                     		O que é politica?
                                     	</a>
@@ -88,11 +77,15 @@
                             </li>
                             </ul>
 
+							<li class="nav-item dropdown">
+                                <a href="<%= base_url %>quiz.jsp" class="nav-link text-white text-center <%= (isCurrentPage.equals("quiz.jsp")) ? "current-page" : "" %>">
+	                                <span>Quiz</span>
+	                                <i class="fas fa-question"></i>
+                                </a>
+                            </li>
                             <li>
-                                <a href="<%= base_url %>entrar.jsp" class="nav-link text-white text-center <%= ( isCurrentPage.equals("entrar.jsp") || isCurrentPage.equals("cadastro.jsp")) ? "current-page" : "" %>">
-                                    <i class="fas fa-sign-in-alt">
-                                    	<span>Entrar</span>
-                                	</i>
+                                <a href="<%= base_url %>entrar.jsp" class="nav-link text-white text-center <%= (isCurrentPage.equals("entrar.jsp") || isCurrentPage.equals("cadastro.jsp")) || (isCurrentPage.equals("add_error.jsp")) || (isCurrentPage.equals("recuperarsenha.jsp")) ? "current-page" : "" %>">
+                                    <span>Entrar </span><i class="fas fa-sign-in-alt"></i>
                                 </a>
                             </li>
                             </li>

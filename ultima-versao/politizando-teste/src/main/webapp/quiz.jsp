@@ -1,5 +1,5 @@
 
-		<% String isCurrentPage = "quiz"; %>
+		<% String isCurrentPage = "quiz.jsp"; %>
 		<% String titulo = "Quiz | Politizando"; %>
     	<%@ include file="./_view/_includes/header.jsp" %>
     	<%@ include file="./_view/quiz_view.jsp" %>

@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
     <%@ page import = "com.banco.dao.UserDao, com.banco.bean.*, java.util.*" %>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <% String isCurrentPage = "ver_dados.jsp"; %>
 	<% String titulo = "Mostrar dados | Politizando"; %>
 	<%@ include file="_view/_includes/header.jsp" %>
 
@@ -31,7 +32,7 @@
 						<td>${usr.getUsr_email()} <hr> </td>
 						<td>${usr.getUsr_pass()} <hr> </td>
 						<td> 
-							<a class="text-dark" href="deletar.jsp?usr_id=${usr.getUsr_id()}">Deletar</a>
+							<a class="text-dark" id="remove_usr"  href="deletar.jsp?usr_id=${usr.getUsr_id()}">Deletar</a>
 						</td>
 
 					</tr>  

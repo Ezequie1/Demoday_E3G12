@@ -10,18 +10,19 @@ public class UserDao {
 
     public static Connection getConnection(){
         Connection con = null;
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/demoday","root","");
         
-        }catch(Exception e){
+        } catch(Exception e){
         	System.out.println(e);
         }
         return con;
     }
+   
     public static int save(User u){
         int status = 0;
-        try{
+        try {
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(
                     
@@ -31,7 +32,6 @@ public class UserDao {
             ps.setString(3,u.getUsr_nick());
             ps.setString(4, u.getUsr_pass());
             ps.setString(5, u.getUsr_name());
-
             status = ps.executeUpdate();
             
         }catch(Exception e){
@@ -60,7 +60,7 @@ public class UserDao {
     
     public static int delete(User u){
         int status = 0;
-        try{
+        try {
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement("delete from usr_data where usr_id=?");
             ps.setInt(1,u.getUsr_id());
@@ -79,6 +79,7 @@ public class UserDao {
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement("select * from usr_data");
             ResultSet rs = ps.executeQuery();
+           
             while( rs.next()){
                 User u = new User();
                 u.setUsr_id(rs.getInt("usr_id"));  
@@ -86,8 +87,6 @@ public class UserDao {
                 u.setUsr_nick(rs.getString("usr_nick"));
                 u.setUsr_pass(rs.getString("usr_pass"));
                 u.setUsr_name(rs.getString("usr_name"));
-                
-                
                 list.add(u);
             }
         }catch(Exception e){
@@ -95,6 +94,7 @@ public class UserDao {
         }
         return list;
     }
+    
     public static User getRecordById(int id){
         User u = null;
         try{
@@ -116,10 +116,11 @@ public class UserDao {
     }
     
     
-    public boolean verifyUsr_login(String email, String pass) {
-    	User u = null;
+    
+    public static boolean verifyUsr_login(String email, String pass) {
+    	//User u = null;
     	boolean usr_Logged = false;
-        try{
+        try {
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement("select usr_email, usr_pass from usr_data where usr_email = ? and usr_pass = ?");
             ps.setString(1, email);
@@ -129,7 +130,7 @@ public class UserDao {
             	usr_Logged = true;
             	//session.setAttribute("logado", true);
             }
-        }catch(Exception e){
+        } catch(Exception e){
         	System.out.println(e);
         }
         return usr_Logged;

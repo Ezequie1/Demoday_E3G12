@@ -10,10 +10,24 @@
                   </div>
               
                   <!-- Login Form -->
-                  <form method="POST" action="representantes-politicos/tres-poderes.jsp"> 
-                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuário" required>
-                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="Senha" required>
+                  <form method="POST" action="entrar_action.jsp"> 
+                    <input type="text" id="login" class="fadeIn second" name="usr_email" placeholder="Usuário" required>
+                    <input type="password" id="password" class="fadeIn third" name="usr_pass" placeholder="Senha" required>
                     <input type="submit" class="fadeIn fourth" value="Entrar">
+                    <% 
+                    	String erro = request.getParameter("msg_error"); 
+                    	//out.print(erro);
+                    %>
+                    <% if(erro == null) { %> 
+                		
+                	<% } else { %>
+                			<div class="alert alert-warning d-flex align-items-center" role="alert">
+							  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+							  <div >
+							    <span class="text-center">Usuário ou senha inválidos.</span>
+							  </div>
+							</div>
+                	<% } %>
                     
                   </form>
                   <a href="cadastro.jsp">Não tem conta?</a>
